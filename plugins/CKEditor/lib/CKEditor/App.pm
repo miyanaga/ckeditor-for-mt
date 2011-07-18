@@ -315,6 +315,14 @@ sub param_edit_entry {
 				push(@ids, 'customfield_' . $f->basename);
 			}
 		}
+		my @ckeditor_fields = CustomFields::Field->load({
+			'blog_id' => [ 0, $blog_id ],
+			'obj_type' => $app->param('_type'),
+			'type' => 'ckeditor',
+		});
+		foreach my $f (@ckeditor_fields) {
+			push(@ids, 'customfield_' . $f->basename);
+		}
 	}
 
 	if (@ids) {

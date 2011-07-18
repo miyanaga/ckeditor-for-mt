@@ -137,3 +137,11 @@ applications:
     cms:
         methods:
            ckeditor_content_css: CKEditor::App::content_css
+
+customfield_types:
+    ckeditor:
+        label: CKEditor
+        field_html: |
+            <textarea name="<mt:var name='field_name' escape='html'>" id="<mt:var name='field_id'> class="text high"><mt:var name="field_value" escape="html"></textarea>
+        column_def: vclob
+        order: 1000
